@@ -18,9 +18,9 @@
     --card-bg-color: #fff;
     --input-bg-color: #f9f9f9;
     --input-text-color: #000;
-    --button-bg-color: #0078d4;
+    --button-bg-color: #fa8181;
     --button-text-color: #fff;
-    --button-hover-bg-color: #005a9e;
+    --button-hover-bg-color: #fc5757;
     --separator-color: #ddd;
 }
 
@@ -32,12 +32,13 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.3s ease;
 }
 
 .headerdiv {
     background-color: var(--card-bg-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: padding 0.3s ease, margin-top 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease, border-radius 0.3s ease;
+    transition: padding 0.3s ease, margin-top 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease, border-radius 0.3s ease, background-color 0.3s ease;
 }
 
 @media (orientation: landscape) {
@@ -72,7 +73,7 @@ body {
 .footerdiv {
     background-color: var(--card-bg-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: padding 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease, border-radius 0.3s ease;
+    transition: padding 0.3s ease, margin-bottom 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease, border-radius 0.3s ease, background-color 0.3s ease;
 }
 
 @media (orientation: landscape) {
@@ -110,6 +111,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     margin: auto auto;
+    transition: background-color 0.3s ease;
 }
 
 .searchdiv {
@@ -128,7 +130,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
@@ -211,6 +213,7 @@ select {
     color: var(--input-text-color);
     font-size: 16px;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 select:focus {
@@ -219,7 +222,7 @@ select:focus {
 
 .resultdiv {
     overflow: hidden;
-    transition: height 0.3s ease, opacity 0.3s ease, width 0.3s ease, margin-top 0.3s ease, padding 0.3s ease;
+    transition: height 0.3s ease, opacity 0.3s ease, width 0.3s ease, margin-top 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
     margin-top: 0px;
     background-color: var(--card-bg-color);
     padding: 0px;
@@ -253,11 +256,13 @@ td {
 th {
     background-color: var(--card-bg-color);
     color: var(--description-color);
+    transition: background-color 0.3s ease;
 }
 
 td {
     background-color: var(--card-bg-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease;
 }
 
 tr.animate {
@@ -300,6 +305,7 @@ tr.animate {
 
     }
 }
+
 @media (orientation: portrait) {
     @keyframes fadeSlideIn {
         from {
@@ -320,6 +326,7 @@ tr.animate {
     align-items: center;
     width: 100%;
     height: 100%;
+    gap: 10px;
 }
 
 .themebtn {
@@ -331,7 +338,63 @@ tr.animate {
     padding: 0px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
+
 .themebtn:hover {
     color: var(--description-color);
     background-color: transparent;
+}
+
+.githubbtn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.githubbtn:hover {
+    color: var(--description-color);
+    background-color: transparent;
+}
+
+@media (orientation: landscape) {
+    .footerdiv{
+        animation: xSlideLeftToRight 0.3s ease forwards;
+    }
+
+    .headerdiv{
+        animation: xSlideRightToLeft 0.3s ease forwards;
+    }
+}
+
+@media (orientation: portrait) {
+    .footerdiv{
+        animation: xSlideRightToLeft 0.3s ease forwards;
+    }
+
+    .headerdiv{
+        animation: xSlideLeftToRight 0.3s ease forwards;
+    }
+}
+
+@keyframes xSlideLeftToRight {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes xSlideRightToLeft {
+    from {
+        transform: translateX(50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
