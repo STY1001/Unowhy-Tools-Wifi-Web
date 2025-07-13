@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Unowhy Tools Wifi Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="headerdiv">
+            <h1 class="headerh1">Unowhy Tools Wifi Web</h1>
+        </div>
+    </header>
+    <div style="display: flex; flex: 1;">
+        <div id="container" class="container">
+            <div id="searchdiv" class="searchdiv">
+                <input type="text" id="snbox" placeholder="Serial Number" class="snbox" />
+                <select id="serverselect">
+                    <option value="idf">idf.hisqool.com</option>
+                    <option value="allsqool">allsqool.hisqool.com</option>
+                </select>
+                <button class="getbtn" id="getbtn" onclick="getNetworkConfig()"><span
+                        class="getbtnlabel">Search</span></button>
+            </div>
+            <div id="resultdiv" class="resultdiv" style="width: 0; height: 0;">
+                <table id="resulttable" class="resulttable">
+                    <thead>
+                        <tr>
+                            <th>SSID</th>
+                            <th>Password</th>
+                            <th>Security type</th>
+                            <th>Hidden ?</th>
+                            <th>Proxy type</th>
+                            <th>Proxy IP (Manual)</th>
+                            <th>Proxy Port (Manual)</th>
+                            <th>Proxy URL (Auto)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer style="margin-bottom: 0;margin-top: auto;">
+        <div class="footerdiv">
+            <div class="footerbtn">
+                <button id="themebtn" class="themebtn" onclick="toggleTheme()">
+                    <span id="themebtnicon" class="material-icons">settings_suggest</span>
+                </button>
+            </div>
+            <p class="footerp">&lt;/&gt; by STY1001</p>
+        </div>
+    </footer>
+</body>
+
+</html>
